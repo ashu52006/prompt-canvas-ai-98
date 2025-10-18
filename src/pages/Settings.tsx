@@ -51,8 +51,16 @@ const Settings = () => {
             </div>
 
             <div className="space-y-6">
+              <div className="p-4 bg-primary/10 border border-primary/20 rounded-lg">
+                <h3 className="font-semibold text-primary mb-2">✅ Image Generation - Already Working!</h3>
+                <p className="text-sm text-muted-foreground">Uses Lovable AI - no API key needed</p>
+              </div>
+
               <div className="space-y-2">
-                <Label htmlFor="replicate">Replicate API Key</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="replicate">Replicate API Key</Label>
+                  <span className="text-xs bg-cyan-500/10 text-cyan-500 px-2 py-1 rounded">Required for Video</span>
+                </div>
                 <Input
                   id="replicate"
                   type="password"
@@ -62,15 +70,18 @@ const Settings = () => {
                   className="font-mono"
                 />
                 <p className="text-sm text-muted-foreground">
-                  Used for video generation. Get your key at{" "}
-                  <a href="https://replicate.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                    replicate.com
+                  🎬 Enables: Video Generation • Get at{" "}
+                  <a href="https://replicate.com/account/api-tokens" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+                    replicate.com/account/api-tokens
                   </a>
                 </p>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="stability">Stability AI API Key</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="stability">Stability AI API Key (Optional)</Label>
+                  <span className="text-xs bg-purple-500/10 text-purple-500 px-2 py-1 rounded">Optional</span>
+                </div>
                 <Input
                   id="stability"
                   type="password"
@@ -80,15 +91,18 @@ const Settings = () => {
                   className="font-mono"
                 />
                 <p className="text-sm text-muted-foreground">
-                  Used for advanced image generation. Get your key at{" "}
-                  <a href="https://platform.stability.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                    platform.stability.ai
+                  🎨 Enables: Advanced Image Features • Get at{" "}
+                  <a href="https://platform.stability.ai/account/keys" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+                    platform.stability.ai/account/keys
                   </a>
                 </p>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="elevenlabs">ElevenLabs API Key</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="elevenlabs">ElevenLabs API Key (Optional)</Label>
+                  <span className="text-xs bg-purple-500/10 text-purple-500 px-2 py-1 rounded">Optional</span>
+                </div>
                 <Input
                   id="elevenlabs"
                   type="password"
@@ -98,9 +112,9 @@ const Settings = () => {
                   className="font-mono"
                 />
                 <p className="text-sm text-muted-foreground">
-                  Used for voice generation. Get your key at{" "}
-                  <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                    elevenlabs.io
+                  🎙️ Enables: Voice & Audio Generation • Get at{" "}
+                  <a href="https://elevenlabs.io/app/settings/api-keys" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+                    elevenlabs.io/app/settings/api-keys
                   </a>
                 </p>
               </div>
