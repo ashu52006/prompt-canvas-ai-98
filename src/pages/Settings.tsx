@@ -51,72 +51,90 @@ const Settings = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="p-4 bg-primary/10 border border-primary/20 rounded-lg">
-                <h3 className="font-semibold text-primary mb-2">✅ Image Generation - Already Working!</h3>
+              <div className="p-6 bg-green-500/10 border-2 border-green-500/30 rounded-lg">
+                <h3 className="font-semibold text-green-600 dark:text-green-400 mb-2 text-lg">Image Generation - Already Working</h3>
                 <p className="text-sm text-muted-foreground">Uses Lovable AI - no API key needed</p>
               </div>
 
-              <div className="space-y-2">
+              <div className="p-6 bg-gradient-to-br from-orange-500/5 to-red-500/5 border-2 border-orange-500/30 rounded-xl space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="replicate">Replicate API Key</Label>
-                  <span className="text-xs bg-cyan-500/10 text-cyan-500 px-2 py-1 rounded">Required for Video</span>
+                  <Label htmlFor="replicate" className="text-base font-semibold">Replicate API Key</Label>
+                  <span className="text-xs bg-orange-500/20 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-full font-semibold">REQUIRED FOR VIDEO</span>
                 </div>
                 <Input
                   id="replicate"
                   type="password"
-                  placeholder="r8_xxxxxxxxxxxx"
+                  placeholder="Paste your Replicate API key here: r8_xxxxxxxxxxxx"
                   value={apiKeys.replicate}
                   onChange={(e) => setApiKeys({ ...apiKeys, replicate: e.target.value })}
-                  className="font-mono"
+                  className="font-mono text-base h-12 border-2"
                 />
-                <p className="text-sm text-muted-foreground">
-                  🎬 Enables: Video Generation • Get at{" "}
-                  <a href="https://replicate.com/account/api-tokens" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
-                    replicate.com/account/api-tokens
-                  </a>
-                </p>
+                <div className="flex items-start gap-2 p-3 bg-background/50 rounded-lg">
+                  <span className="text-2xl">🎬</span>
+                  <div>
+                    <p className="text-sm font-medium mb-1">Enables: Video Generation</p>
+                    <p className="text-sm text-muted-foreground">
+                      Get your key at{" "}
+                      <a href="https://replicate.com/account/api-tokens" target="_blank" rel="noopener noreferrer" className="text-orange-600 dark:text-orange-400 hover:underline font-semibold">
+                        replicate.com/account/api-tokens
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="p-6 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 border-2 border-blue-500/20 rounded-xl space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="stability">Stability AI API Key (Optional)</Label>
-                  <span className="text-xs bg-purple-500/10 text-purple-500 px-2 py-1 rounded">Optional</span>
+                  <Label htmlFor="stability" className="text-base font-semibold">Stability AI API Key</Label>
+                  <span className="text-xs bg-blue-500/20 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full font-semibold">OPTIONAL</span>
                 </div>
                 <Input
                   id="stability"
                   type="password"
-                  placeholder="sk-xxxxxxxxxxxx"
+                  placeholder="Paste your Stability AI key here: sk-xxxxxxxxxxxx"
                   value={apiKeys.stability}
                   onChange={(e) => setApiKeys({ ...apiKeys, stability: e.target.value })}
-                  className="font-mono"
+                  className="font-mono text-base h-12 border-2"
                 />
-                <p className="text-sm text-muted-foreground">
-                  🎨 Enables: Advanced Image Features • Get at{" "}
-                  <a href="https://platform.stability.ai/account/keys" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
-                    platform.stability.ai/account/keys
-                  </a>
-                </p>
+                <div className="flex items-start gap-2 p-3 bg-background/50 rounded-lg">
+                  <span className="text-2xl">🎨</span>
+                  <div>
+                    <p className="text-sm font-medium mb-1">Enables: Advanced Image Features</p>
+                    <p className="text-sm text-muted-foreground">
+                      Get your key at{" "}
+                      <a href="https://platform.stability.ai/account/keys" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                        platform.stability.ai/account/keys
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="p-6 bg-gradient-to-br from-green-500/5 to-emerald-500/5 border-2 border-green-500/20 rounded-xl space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="elevenlabs">ElevenLabs API Key (Optional)</Label>
-                  <span className="text-xs bg-purple-500/10 text-purple-500 px-2 py-1 rounded">Optional</span>
+                  <Label htmlFor="elevenlabs" className="text-base font-semibold">ElevenLabs API Key</Label>
+                  <span className="text-xs bg-green-500/20 text-green-600 dark:text-green-400 px-3 py-1 rounded-full font-semibold">OPTIONAL</span>
                 </div>
                 <Input
                   id="elevenlabs"
                   type="password"
-                  placeholder="xxxxxxxxxxxxxxxx"
+                  placeholder="Paste your ElevenLabs key here: xxxxxxxxxxxxxxxx"
                   value={apiKeys.elevenlabs}
                   onChange={(e) => setApiKeys({ ...apiKeys, elevenlabs: e.target.value })}
-                  className="font-mono"
+                  className="font-mono text-base h-12 border-2"
                 />
-                <p className="text-sm text-muted-foreground">
-                  🎙️ Enables: Voice & Audio Generation • Get at{" "}
-                  <a href="https://elevenlabs.io/app/settings/api-keys" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
-                    elevenlabs.io/app/settings/api-keys
-                  </a>
-                </p>
+                <div className="flex items-start gap-2 p-3 bg-background/50 rounded-lg">
+                  <span className="text-2xl">🎙️</span>
+                  <div>
+                    <p className="text-sm font-medium mb-1">Enables: Voice & Audio Generation</p>
+                    <p className="text-sm text-muted-foreground">
+                      Get your key at{" "}
+                      <a href="https://elevenlabs.io/app/settings/api-keys" target="_blank" rel="noopener noreferrer" className="text-green-600 dark:text-green-400 hover:underline font-semibold">
+                        elevenlabs.io/app/settings/api-keys
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
